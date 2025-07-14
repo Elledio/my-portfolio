@@ -7,37 +7,76 @@ body{
     padding: 0;
     background-color: #000000;
 }
-header {
-    position: relative;
-    background-color: black; 
-    color: white;
-    padding:40px 20px;
-    overflow: hidden;
+.slideshow-header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+  padding-left: 60px;
+  background-color: black;
 }
-header::before {
-  content: '';
+
+/* Background slideshow on the right */
+.slideshow-header::before {
+  content: "";
   position: absolute;
-  top: -170px;
-  left: -170px;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, #0cc0df, transparent 70%);
-  border-radius: 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 30%; /* Only 70% from the right shows image */
+  background-image: url('bgimages/slide1.jpg');
+  background-size: cover;
+  background-position: center;
   z-index: 0;
-  opacity: 0.5;
+  animation: slideshow 32s infinite ease-in-out;
 }
-header::after {
-  content: '';
+
+/* Diagonal gradient overlay from black to transparent */
+.gradient-overlay {
   position: absolute;
-  top: -400px;
-  right: -400px;
-  width: 900px;
-  height: 900px;
-  background: radial-gradient(circle, #ff66c4, transparent 70%);
-  border-radius: 50%;
-  z-index: 0;
-  opacity: 0.4;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, black 45%, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0.3) 80%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
 }
+
+/* Text and buttons stay on top */
+.header-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+/* 🔁 Slideshow keyframes */
+@keyframes slideshow {
+  0%, 12.5% {
+    background-image: url('bgimages/slide1.jpg');
+  }
+  12.51%, 25% {
+    background-image: url('bgimages/slide2.jpg');
+  }
+  25.01%, 37.5% {
+    background-image: url('bgimages/slide3.jpg');
+  }
+  37.51%, 50% {
+    background-image: url('bgimages/slide4.jpg');
+  }
+  50.01%, 62.5% {
+    background-image: url('bgimages/slide5.jpg');
+  }
+  62.51%, 75% {
+    background-image: url('bgimages/slide6.jpg');
+  }
+  75.01%, 87.5% {
+    background-image: url('bgimages/slide7.jpg');
+  }
+  87.51%, 100% {
+    background-image: url('bgimages/slide8.jpg');
+  }
+}
+
 header h1,h2,p{
     position: relative;
   z-index: 1;
@@ -68,7 +107,7 @@ h2{
     font-size: 2em;
     text-align: left;
     margin-left:40px;
-    margin-right: 500px;
+    /*margin-right: 500px;*/
     color: #ff0000;
     letter-spacing: 2px;
     margin-top: 5px;
@@ -86,7 +125,7 @@ p {
   flex-direction: column;
   align-items: flex-start; 
   gap: 15px;
-  width: 150px; 
+  width: 130px; 
 }
 .download-button{
     font-family: "Poppins",sans-serif;
