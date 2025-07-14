@@ -1,0 +1,216 @@
+html {
+  scroll-behavior: smooth;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+header {
+    position: relative;
+    background-color: black; 
+    color: white;
+    padding:40px 20px;
+    overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: -170px;
+  left: -170px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #0cc0df, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.5;
+}
+header::after {
+  content: '';
+  position: absolute;
+  top: -400px;
+  right: -400px;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, #ff66c4, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.4;
+}
+header h1,h2,p{
+    position: relative;
+  z-index: 1;
+}
+h1{
+    padding-top: 60px;
+    font-family: "Roboto",sans-serif;
+    font-optical-sizing: auto;
+    font: weight 400px;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    font-size: 4.5em;
+    text-align: left;
+    margin-left:40px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+} 
+h2{
+    font-family: "Tektur",sans-serif;
+    font-optical-sizing: auto;
+    font: weight 400px;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    font-size: 2em;
+    text-align: left;
+    margin-left:40px;
+    margin-right: 500px;
+    color: #ff0000;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    line-height: 1.1;
+}
+p {
+    text-align: left;
+    margin-left:40px;
+    max-width: 700px;     
+    line-height: 1.5;
+    color: #ffffff;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 15px;
+  width: 150px; 
+}
+.download-button{
+    font-family: "Poppins",sans-serif;
+    font-optical-sizing: auto;
+    font: weight 400px;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left:40px;
+    background: linear-gradient(#b4d7f3, #b499f2, #624d65);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%
+}
+.download-button i {
+    margin-left: 8px;
+}
+.projects-button{
+    font-family: "Poppins",sans-serif;
+    font-optical-sizing: auto;
+    font: weight 400px;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-left:40px;
+    background: linear-gradient(#624d65, #b499f2,#b4d7f3);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%
+}
+.projects-button i {
+    margin-left: 8px;
+}
+nav {
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    width: 100%;
+    z-index: 1000;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+/* Hover zone at top */
+.nav-hover-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px; /* height of the hover area */
+  width: 100%;
+  z-index: 998; /* just below nav */
+}
+
+/* Nav styles */
+.hidden-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 15px 0;
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: auto;
+}
+
+.hidden-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hidden nav (fade out) */
+.hidden-nav.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+section {
+    padding-top: 60px;
+    background-color: #000000;
+}
+article {
+    margin: 20px 0;
+}
+footer {
+    padding-top: 60px;
+    background-color: #222;
+    color: #ccc;
+    font-size: 0.9em;
+}
