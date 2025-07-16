@@ -35,5 +35,38 @@ images.concat(images).forEach(src => {
   track.appendChild(img);
 });
 
+// Card Toggle Visibility Script
+// Select the "Show all projects" button
+const showAllButton = document.getElementById('showall');
+
+// Add event listener to the button
+showAllButton.addEventListener('click', function() {
+  // Select all the project cards
+  const projectCards = document.querySelectorAll('.project-card');
+
+  // Check if any of the hidden cards are visible (starting from the 3rd card)
+  const areCardsVisible = [...projectCards].slice(2).some(card => card.style.display === 'block');
+
+  if (areCardsVisible) {
+    // If cards are visible, hide them
+    projectCards.forEach((card, index) => {
+      if (index >= 2) { // Hide cards starting from the third one
+        card.style.display = 'none';
+      }
+    });
+    // Change button text to "Show all projects"
+    showAllButton.textContent = 'Show all projects';
+  } else {
+    // If cards are hidden, show them
+    projectCards.forEach((card, index) => {
+      if (index >= 2) { // Show cards starting from the third one
+        card.style.display = 'block';
+      }
+    });
+    // Change button text to "Toggle Off Projects"
+    showAllButton.textContent = 'Toggle Off Projects';
+  }
+});
+
 
 
