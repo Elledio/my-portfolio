@@ -348,10 +348,6 @@ section {
   background-color: #000000;
 }
 
-article {
-  margin: 20px 0;
-}
-
 #projects {
   background-color: #000;
   color: #000;
@@ -461,7 +457,7 @@ article {
 }
 
 .showall-btn {
-  margin-top: 3%;
+  margin-top: 5%;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.2em;
@@ -620,13 +616,21 @@ article {
   flex-wrap: wrap;            /* Allow items to wrap on smaller screens */
 }
 
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; /* Add space between the images */
+  padding: 20px; /* Padding around the container */
+  justify-items: center; 
+}
 /* Contact info box */
 .contact-info {
   display: flex;               /* Use Flexbox for content inside each box */
   flex-direction: column;      /* Stack the image and text vertically */
   align-items: center;         /* Center the image and text horizontally */
   text-align: center;          /* Center the text */
-  text-size-adjust: ;
+  width: 250px; /* adjust the width as needed */
+  margin: auto;
 }
 
 .contact-info img {
@@ -637,9 +641,12 @@ article {
 
 /* Adjust the size of the text */
 .contact-info p {
-  font-size: 1.2em;  /* Adjust the font size (relative to the parent) */
-  color: #ffffff;       /* You can also change the text color */
-  line-height: 1.5;  /* Adjust line height for readability */
+  display: block; /* makes sure it's on the next line */
+  margin-top: 10px; /* space between image and text */
+  font-size: 14px; /* adjust the font size */
+  word-wrap: break-word; /* wraps long text to next line */
+  max-width: 100%; /* keeps it within the .contact-info width */
+  color: #fff; /* or your preferred color */
 }
 
 /* Optional: If you want the text size to adjust responsively */
@@ -649,11 +656,203 @@ article {
   }
 }
 
-
-
 footer {
-  padding-top: 60px;
+  background-color: #3d3d3d;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.foot-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background-color: #222;
-  color: #ccc;
-  font-size: 0.9em;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.foot-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.foot-button img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Footer Text */
+footer > p {
+  margin-top: 0%;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .foot {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foot-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center; /* centers the icons horizontally */
+  align-items: center;
+  gap: 20px; /* spacing between icons */
+  margin-top: 20px; /* space from buttons above */
+  flex-wrap: wrap; /* makes it responsive */
+}
+
+.icon-row img {
+  width: 40px;  /* adjust size as needed */
+  height: 40px;
+}
+
+/* Tablets and below (≤1024px) */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 4em;
+    margin-left: 20px;
+    padding-top: 40px;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-left: 20px;
+  }
+
+  header p {
+    font-size: 1em;
+    margin-left: 20px;
+    max-width: 90%;
+  }
+
+  .button-group {
+    margin-left: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .projects-button {
+    margin-left: 0;
+    width: auto;
+  }
+
+  .header-image {
+    width: 350px;
+    bottom: -100px;
+    right: -30px;
+  }
+
+  .slideshow-track img {
+    height: 70vh;
+  }
+}
+
+/* Phones (≤768px) */
+@media (max-width: 768px) {
+  .slideshow-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    height: auto;
+    text-align: center;
+  }
+
+  .header-content {
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  h1, h2 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 2.5em;
+  }
+
+  header p {
+    margin-left: 0;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .button-group {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .projects-button,
+  .download-button {
+    width: 90%;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .header-image {
+    display: none;
+  }
+
+  .slideshow-wrapper {
+    left: 0;
+  }
+
+  .slideshow-track {
+    animation: scroll-left 60s linear infinite;
+  }
+
+  .slideshow-track img {
+    height: 50vh;
+  }
+}
+
+/* Extra small phones (≤480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  header p {
+    font-size: 0.95em;
+  }
+
+  .download-button,
+  .projects-button {
+    font-size: 0.9em;
+    padding: 10px 15px;
+  }
+
+  .slideshow-track img {
+    height: 40vh;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(to top, black 20%, rgba(0,0,0,0.6) 60%, transparent);
+  }
 }
